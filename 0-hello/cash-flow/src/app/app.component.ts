@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
+import { Component } from "@angular/core";
 
 @Component({
-  selector: 'cf-root',
+  selector: "cf-root",
   template: `
     <!--The content below is only a placeholder and can be replaced.-->
     <div style="text-align:center">
@@ -27,5 +27,5 @@ import { Component } from '@angular/core';
   styles: []
 })
 export class AppComponent {
-  title = 'cf';
+  title = "Hello World";
 }
