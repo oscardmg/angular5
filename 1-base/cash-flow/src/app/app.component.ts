@@ -4,7 +4,7 @@ import { Component } from "@angular/core";
   selector: "cf-root",
   template: `
     <cf-nav></cf-nav>
-    <cf-main></cf-main>
+    <cf-home></cf-home>
     <cf-footer></cf-footer>  
   `,
   styles: []

@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 
 @Component({
   selector: "cf-footer",
@@ -14,8 +14,7 @@ import { Component, OnInit, ViewEncapsulation } from "@angular/core";
       text-align: center;
     }
   `
-  ],
-  encapsulation: ViewEncapsulation.None
+  ]
 })
 export class FooterComponent implements OnInit {
   constructor() {}

@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 
 @Component({
   selector: "cf-nav",
@@ -13,8 +13,7 @@ import { Component, OnInit, ViewEncapsulation } from "@angular/core";
       border-bottom: .1rem solid;
     }
     `
-  ],
-  encapsulation: ViewEncapsulation.None
+  ]
 })
 export class NavComponent implements OnInit {
   constructor() {}
