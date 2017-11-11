@@ -3,6 +3,10 @@
   "version": "5.0.0",
   "description": "Hola Angular CLI",
   "homepage": "http://academia-binaria.com/hola-angular-cli/",
+  "author": {
+    "name": "Alberto Basalo",
+    "url": "https://twitter.com/albertobasalo"
+  },
   "license": "MIT",
   "scripts": {
     "ng": "ng",
