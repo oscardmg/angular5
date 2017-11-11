@@ -7,10 +7,7 @@
     {
       "root": "src",
       "outDir": "dist",
-      "assets": [
-        "assets",
-        "favicon.ico"
-      ],
+      "assets": ["assets", "favicon.ico"],
       "index": "index.html",
       "main": "main.ts",
       "polyfills": "polyfills.ts",
@@ -19,9 +16,10 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "cf",
       "styles": [
+        "../node_modules/milligram/dist/milligram.min.css",
         "styles.css"
       ],
-      "scripts": [],
+      "scripts": ["../node_modules/moment/min/moment.min.js"],
       "environmentSource": "environments/environment.ts",
       "environments": {
         "dev": "environments/environment.ts",
@@ -61,6 +59,7 @@
     "component": {
       "inlineStyle": true,
       "inlineTemplate": true,
+      "viewEncapsulation": "Emulated",
       "spec": false
     },
     "directive": {
