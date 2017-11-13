@@ -3,9 +3,8 @@ import { Component, OnInit } from "@angular/core";
 @Component({
   selector: "cf-operations",
   template: `
-    <p>
-      operations works!
-    </p>
+    <cf-new></cf-new>
+    <cf-list></cf-list>
   `,
   styles: []
 })
