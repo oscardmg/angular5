@@ -9,6 +9,10 @@ const routes: Routes = [
     component: HomeComponent
   },
   {
+    path: "operations",
+    loadChildren: "./views/operations/operations.module#OperationsModule"
+  },
+  {
     path: "404",
     component: NotFoundComponent
   },
