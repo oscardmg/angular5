@@ -4,9 +4,10 @@ import { CommonModule } from "@angular/common";
 import { FooterComponent } from "./footer/footer.component";
 import { NavComponent } from "./nav/nav.component";
 import { TitleComponent } from "./nav/title.component";
+import { RouterModule } from "@angular/router";
 
 @NgModule({
-  imports: [CommonModule],
+  imports: [CommonModule, RouterModule],
   declarations: [FooterComponent, NavComponent, TitleComponent],
   exports: [FooterComponent, NavComponent]
 })
