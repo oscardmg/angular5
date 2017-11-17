@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, Input, EventEmitter, Output } from "@angular/core";
 import { Operation } from "./operation";
 
 @Component({
@@ -30,16 +30,16 @@ import { Operation } from "./operation";
   styles: []
 })
 export class ListComponent implements OnInit {
-  public numberOfOperations = 0;
-  public operations: Operation[] = [];
+  @Input() public numberOfOperations = 0;
+  @Input() public operations: Operation[] = [];
+  @Output() public delete = new EventEmitter<Operation>();
+
   public title = "List of Operations";
   constructor() {}
 
   ngOnInit() {}
 
   public deleteOperation(operation: Operation) {
-    const index = this.operations.indexOf(operation);
-    this.operations.splice(index, 1);
-    this.numberOfOperations = this.operations.length;
+    this.delete.emit(operation);
   }
 }

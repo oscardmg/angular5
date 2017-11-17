@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, Input, EventEmitter, Output } from "@angular/core";
 import { Operation } from "./operation";
 
 @Component({
@@ -32,10 +32,11 @@ import { Operation } from "./operation";
   styles: []
 })
 export class NewComponent implements OnInit {
+  @Input() public numberOfOperations = 0;
+  @Output() public save = new EventEmitter<Operation>();
+
   public kindsOfOperations = ["Income", "Expense"];
-  public numberOfOperations = 0;
   public operation: Operation = new Operation();
-  public operations: Operation[] = [];
   public title = "New Operation";
 
   constructor() {}
@@ -44,9 +45,7 @@ export class NewComponent implements OnInit {
 
   public saveOperation() {
     const clonedOperation = this.cloneOperation(this.operation);
-    clonedOperation._id = new Date().getTime().toString();
-    this.operations.push(clonedOperation);
-    this.numberOfOperations = this.operations.length;
+    this.save.emit(clonedOperation);
     this.operation = new Operation();
   }
 
