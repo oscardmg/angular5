@@ -4,7 +4,7 @@ import { Operation } from "./operation";
 @Component({
   selector: "cf-new",
   template: `
-  <h2>New Operation</h2>
+  <h2>{{ title | uppercase }}</h2>
   <form class="container">
     <label for="description">Description</label>
     <input name="description"
@@ -28,7 +28,7 @@ import { Operation } from "./operation";
     Number of Operations:{{ numberOfOperations }}
     <em>Current: {{ operation | json }}</em>
   </blockquote>
-  <table>
+  <table *ngIf="numberOfOperations>0;else emptyList">
     <thead>
       <tr>
         <th>Description</th>
@@ -46,6 +46,9 @@ import { Operation } from "./operation";
       </tr>
     </tbody>
   </table>
+  <ng-template #emptyList>
+    <h3>No operations yet.</h3>
+  </ng-template>
   `,
   styles: []
 })
@@ -54,6 +57,7 @@ export class NewComponent implements OnInit {
   public numberOfOperations = 0;
   public operation: Operation = new Operation();
   public operations: Operation[] = [];
+  public title = "New Operation";
 
   constructor() {}
 
