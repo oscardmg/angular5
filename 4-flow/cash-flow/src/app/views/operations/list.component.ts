@@ -1,8 +1,10 @@
 import { Component, OnInit } from "@angular/core";
+import { Operation } from "./operation";
 
 @Component({
   selector: "cf-list",
   template: `
+  <h2>{{ title | uppercase }}</h2>
   <table *ngIf="numberOfOperations>0;else emptyList">
   <thead>
     <tr>
@@ -28,7 +30,16 @@ import { Component, OnInit } from "@angular/core";
   styles: []
 })
 export class ListComponent implements OnInit {
+  public numberOfOperations = 0;
+  public operations: Operation[] = [];
+  public title = "List of Operations";
   constructor() {}
 
   ngOnInit() {}
+
+  public deleteOperation(operation: Operation) {
+    const index = this.operations.indexOf(operation);
+    this.operations.splice(index, 1);
+    this.numberOfOperations = this.operations.length;
+  }
 }

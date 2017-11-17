@@ -50,12 +50,6 @@ export class NewComponent implements OnInit {
     this.operation = new Operation();
   }
 
-  public deleteOperation(operation: Operation) {
-    const index = this.operations.indexOf(operation);
-    this.operations.splice(index, 1);
-    this.numberOfOperations = this.operations.length;
-  }
-
   cloneOperation(originalOperation: Operation): Operation {
     const targetOperation = Object.assign({}, originalOperation);
     return targetOperation;
